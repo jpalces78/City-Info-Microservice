@@ -16,7 +16,7 @@ app.get('/city-info', async (req, res) => {
     }
 
     // Fetch city details from Geonames API
-    const geoNamesUrl = `http://api.geonames.org/searchJSON?q=${cityName}&maxRows=1&username=${process.env.GEONAMES_USERNAME}`;
+    const geoNamesUrl = `http://api.geonames.org/searchJSON?q=${cityName}&maxRows=1&username=jpman309`;
     const geoNamesResponse = await axios.get(geoNamesUrl);
     const cityDetails = geoNamesResponse.data.geonames[0];
 
