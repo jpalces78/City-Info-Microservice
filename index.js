@@ -25,7 +25,7 @@ app.get('/city-info', async (req, res) => {
     }
 
     // Fetch current time from TimezoneDB API
-    const timezoneDbUrl = `http://api.timezonedb.com/v2.1/get-time-zone?key=${process.env.TIMEZONE_DB_KEY}&format=json&by=position&lat=${cityDetails.lat}&lng=${cityDetails.lng}`;
+    const timezoneDbUrl = `http://api.timezonedb.com/v2.1/get-time-zone?key=UCUNZWEPNGQG&format=json&by=position&lat=${cityDetails.lat}&lng=${cityDetails.lng}`;
     const timezoneDbResponse = await axios.get(timezoneDbUrl);
     const currentTime = new Date(timezoneDbResponse.data.formatted);
 
