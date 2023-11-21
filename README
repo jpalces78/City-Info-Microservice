@@ -9,7 +9,7 @@ To request data from the microservice, make an HTTP GET request to the /city-inf
 
 Example Call:
 
-curl http://localhost:3000/city-info?city=New York
+curl https://city-info-microservice.onrender.com/city-info?city=New York
 Replace New York with the name of the city you are interested in.
 
 How to Programmatically RECEIVE Data
@@ -29,3 +29,39 @@ population: The population of the city.
 currentTime: The current time in ISO 8601 format.
 
 Please ensure your application handles the response appropriately and adjusts the parsing logic based on the structure of the returned JSON.
+
+
+Client                  Microservice                 Geonames API / TimezoneDB API
+  |                           |                                |                          
+  |                           |                                |                           
+  |                           |                                |                           
+  |                           |                                |                           
+  |   HTTP GET request        |                                |                           
+  |-------------------------->|                                |                           
+  |                           |                                |                           
+  |                           |                                |                          
+  |                           |    HTTP GET request          |                           
+  |                           |--------------------------->  |                           
+  |                           |                                |                          
+  |                           |                                |                           
+  |                           |    Process request, fetch     |                           
+  |                           |    data from Geonames API,    |                           
+  |                           |    and prepare response       |                           
+  |                           |<-------------------------------|                          
+  |   Receive HTTP response   |                                |                           
+  |<--------------------------|                                |                           
+  |                           |                                |                           
+  |                           |                                |                           
+  |                           |    HTTP GET request          |                           
+  |                           |--------------------------->  |                           
+  |                           |                                |                          
+  |                           |                                |                           
+  |                           |    Process request, fetch     |                           
+  |                           |    timezone data from         |                          
+  |                           |    TimezoneDB API, and         |                           
+  |                           |    prepare timezone response   |                           
+  |                           |<-------------------------------|                           
+  |                           |                                |                           
+  |                           |                                |                           
+  |                           |                                |                           
+  |                           |                                |                           
