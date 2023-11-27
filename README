@@ -9,7 +9,7 @@ To request data from the microservice, make an HTTP GET request to the /city-inf
 
 Example Call:
 
-curl https://city-info-microservice.onrender.com/city-info?city=New York
+curl https://travel-impact-model-404223.uc.r.appspot.com/city-info?city=New%20York
 Replace New York with the name of the city you are interested in.
 
 How to Programmatically RECEIVE Data
